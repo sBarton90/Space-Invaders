@@ -207,3 +207,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  laser: {fileID: 815073618912739497, guid: 42cd9a9edec7d2549a12224a9911f897, type: 3}

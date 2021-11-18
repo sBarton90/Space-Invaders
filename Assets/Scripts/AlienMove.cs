@@ -8,15 +8,15 @@ public class AlienMove : MonoBehaviour
     private float timeToMove = 0.5f;
     private float moveAmount = .25f;
     private bool collided;
+
     
     void Update()
     {
-        if (!collided) {
+         if (!collided) {
             MoveGroup(moveAmount);
         } else {
             MoveGroup(-moveAmount);
         }
-        
     }
 
     void MoveGroup(float moveAmount) {
@@ -27,12 +27,9 @@ public class AlienMove : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Right Wall") {
-            collided = true;
-        }
-        if (other.gameObject.tag == "Left Wall") {
-            collided = false;
-        }
+    public void CollisionDetected(AlienCollisionDetect collisionDetect) {
+        Vector2 moveDown = new Vector2(0, -.05f);
+        transform.Translate(moveDown);
+        collided ^= true;
     }
 }
