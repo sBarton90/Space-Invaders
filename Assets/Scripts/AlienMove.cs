@@ -9,7 +9,7 @@ public class AlienMove : MonoBehaviour
     private float moveAmount = .25f;
     private bool collided;
 
-    
+    Vector2 moveDown = new Vector2(0, -.05f);
     void Update()
     {
          if (!collided) {
@@ -28,7 +28,6 @@ public class AlienMove : MonoBehaviour
     }
 
     public void CollisionDetected(AlienCollisionDetect collisionDetect) {
-        Vector2 moveDown = new Vector2(0, -.05f);
         transform.Translate(moveDown);
         collided ^= true;
     }
