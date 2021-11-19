@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     float timer;
     int playerScore = 0;
 
+    void Start() {
+        UpdateScore();
+    }
     void Update() {
         timer += Time.deltaTime;
         SpawnUFO();
